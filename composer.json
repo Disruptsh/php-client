@@ -13,7 +13,9 @@
         "php": ">=7.2"
     },
     "autoload": {
-        "files": ["src/disruptsh.php"]
+        "psr-4": {
+            "Disruptsh\\": "src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
