@@ -1,0 +1,29 @@
+{
+    "name": "disruptsh/php-client",
+    "description": "Bridge library for running scripts on Disrupt.sh",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pascal ROCHE",
+            "email": "contact@disrupt.sh"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "files": ["src/disruptsh.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "require-dev": {
+    }
+}
