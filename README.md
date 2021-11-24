@@ -1,6 +1,6 @@
 # PHP bridge for Disrupt.sh
 
-This simple bridge library connects a PHPP-based application to [Disrupt.sh](https://disrupt.sh/).  In the typical case it should be completely fire-and-forget.
+This simple bridge library connects a PHP-based application to [Disrupt.sh](https://disrupt.sh/).
 
 ## Usage
 
