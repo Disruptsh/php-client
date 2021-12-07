@@ -22,7 +22,6 @@ class Disruptsh{
             $content = @file_get_contents($file);
             if (!$content) return null;
 
-            echo 'getConfig file : ' . $file . "\n";
             $config = json_decode($content,true);
             return $config;
         }
@@ -30,6 +29,30 @@ class Disruptsh{
             return null;
         }
     }
+
+    /**
+     * @param $publish
+     * @return mixed|null
+     */
+    public static function getParameters($publish){
+
+        try{
+            if ($publish!='false')
+                $file = '/home/app/config/disruptsh/appConfiguration.json';
+            else
+                $file = '.disruptsh/appConfiguration.json';
+            $content = @file_get_contents($file);
+            if (!$content) return null;
+
+            $params = json_decode($content);
+            return $params;
+        }
+        catch(Exception $e){
+            return null;
+        }
+    }
+
+
 
     /**
      * @return array|string|string[]
@@ -183,4 +206,3 @@ class Disruptsh{
     }
 
 }
-
