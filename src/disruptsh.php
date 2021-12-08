@@ -1,7 +1,5 @@
 <?php
 
-namespace Disruptsh;
-
 use PDO;
 
 class Disruptsh{
@@ -57,24 +55,24 @@ class Disruptsh{
      * @param $json
      * @return mixed|null
      */
-    public static function saveParameters($array,$publish){
-        try{
-            if ($publish!='false')
+    public static function saveParameters($array,$publish)
+    {
+        try {
+            if ($publish != 'false')
                 $file = '/home/app/config/disruptsh/appConfiguration.json';
             else
                 $file = '.disruptsh/appConfiguration.json';
             $json = json_encode($array);
-            $content = @file_put_contents($file,$json);
+            $content = @file_put_contents($file, $json);
             if (!$content) return false;
             return true;
-        }
-        catch(Exception $e){
+        } catch (Exception $e) {
             return null;
         }
+    }
 
 
-
-        /**
+    /**
      * @return array|string|string[]
      */
     public static function randomMongoDBID(){
