@@ -1,5 +1,7 @@
 <?php
 
+namespace Disruptsh;
+
 use PDO;
 
 class Disruptsh{
