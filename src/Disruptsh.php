@@ -64,7 +64,7 @@ class Disruptsh{
                 $file = '/home/app/config/disruptsh/appConfiguration.json';
             else
                 $file = '.disruptsh/appConfiguration.json';
-            $json = json_encode($array);
+            $json = json_encode($array,JSON_PRETTY_PRINT);
             $content = @file_put_contents($file, $json);
             if (!$content) return false;
             return true;
