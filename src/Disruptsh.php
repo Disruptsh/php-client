@@ -12,13 +12,11 @@ class Disruptsh{
      * @param string $mode
      * @return mixed
      */
-    public static function getConfig($publish,$appName){
+    public static function getConfig($path,$appName){
 
         try{
-            if ($publish!='false')
-                $file = '/home/app/config/disruptsh/'.$appName.'.json';
-            else
-                $file = '.disruptsh/'.$appName.'.json';
+            $file = $path . '/'.$appName.'.json';
+        
             $content = @file_get_contents($file);
             if (!$content) return null;
 
@@ -34,13 +32,11 @@ class Disruptsh{
      * @param $publish
      * @return mixed|null
      */
-    public static function getParameters($publish){
+    public static function getParameters($path){
 
         try{
-            if ($publish!='false')
-                $file = '/home/app/config/disruptsh/appConfiguration.json';
-            else
-                $file = '.disruptsh/appConfiguration.json';
+            $file = $path . '/appConfiguration.json';
+
             $content = @file_get_contents($file);
             if (!$content) return null;
 
@@ -57,13 +53,11 @@ class Disruptsh{
      * @param $json
      * @return mixed|null
      */
-    public static function saveParameters($array,$publish)
+    public static function saveParameters($array,$path)
     {
         try {
-            if ($publish != 'false')
-                $file = '/home/app/config/disruptsh/appConfiguration.json';
-            else
-                $file = '.disruptsh/appConfiguration.json';
+            $file = $path . '/appConfiguration.json';
+
             $json = json_encode($array,JSON_PRETTY_PRINT);
             $content = @file_put_contents($file, $json);
             if (!$content) return false;
